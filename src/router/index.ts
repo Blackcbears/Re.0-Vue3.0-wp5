@@ -1,3 +1,8 @@
+/**
+ * @author CuiJing
+ * @date 2021-2-19 17:28
+ * @description 项目路由
+ */
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/home';
 import Me from '@/views/me';
@@ -11,17 +16,17 @@ const index = createRouter({
         {
             path: '/',
             name: 'Home',
-            component: Home
+            component: () => import('@/views/home'),
         },
         {
             path: '/me',
             name: 'Me',
-            component: Me
+            component: () => import('@/views/Me'),
         },
         {
             path: '/about',
             name: 'about',
-            component: about
+            component: () => import('@/views/about.vue'),
         },
 
     ]
